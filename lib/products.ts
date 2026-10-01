@@ -84,8 +84,10 @@ export const PRODUCTS: Product[] = [
 ];
 
 export const LOOKBOOK = [
-  { id: "lb-1", label: "Drop 01 — Star back", tone: "#1a1a1a" },
-  { id: "lb-2", label: "Drop 01 — Full fit", tone: "#111111" },
-  { id: "lb-3", label: "Signal shirt — white", tone: "#eaeaea" },
-  { id: "lb-4", label: "Street night — pink", tone: "#2a0a18" },
+  { id: "signal-loss", label: "Signal Loss", src: "/editorial-signal-loss.webp", tone: "#1a1a1a" },
+  { id: "pink-noise", label: "Pink Noise", src: "/editorial-pink-noise.webp", tone: "#2a1520" },
+  { id: "static-bloom", label: "Static Bloom", src: "/editorial-static-bloom.webp", tone: "#241018" },
+  { id: "no-reception", label: "No Reception", src: "/editorial-no-reception.webp", tone: "#121212" },
+  { id: "afterimage", label: "Afterimage", src: "/editorial-afterimage.webp", tone: "#1c1018" },
+  { id: "system-error", label: "System Error", src: "/editorial-system-error.webp", tone: "#101010" },
 ] as const;

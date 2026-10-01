@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import BagPanel from "@/components/BagPanel";
 import { ShopGrid, CategoryGrid } from "@/components/ProductGrid";
-import { LOOKBOOK } from "@/lib/products";
+import EditorialTiles from "@/components/EditorialTiles";
 
 export default function HomePage() {
   return (
@@ -69,22 +69,7 @@ export default function HomePage() {
               <p className="section-lead">
                 Still frames from the Drop 01 shoot — concept imagery only.
               </p>
-              <ul className="lookbook-strip">
-                {LOOKBOOK.map((frame) => (
-                  <li key={frame.id}>
-                    <figure className="lookbook-card">
-                      <div
-                        className="lookbook-frame"
-                        style={{ background: frame.tone }}
-                        aria-hidden="true"
-                      >
-                        <span>★</span>
-                      </div>
-                      <figcaption>{frame.label}</figcaption>
-                    </figure>
-                  </li>
-                ))}
-              </ul>
+              <EditorialTiles />
             </div>
           </section>
 
