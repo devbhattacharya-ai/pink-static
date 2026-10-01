@@ -30,6 +30,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -53,6 +54,7 @@ body {
   background: var(--bg);
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
 }
 
 img {
@@ -311,8 +313,13 @@ select {
 .hero-backdrop {
   position: absolute;
   inset: 8% 0 auto;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
   text-align: center;
-  font-size: clamp(3.5rem, 18vw, 12rem);
+  font-size: clamp(2.4rem, 12vw, 12rem);
   font-weight: 900;
   letter-spacing: -0.04em;
   line-height: 0.85;
@@ -324,6 +331,7 @@ select {
   pointer-events: none;
   z-index: 0;
   opacity: 0.55;
+  white-space: nowrap;
 }
 
 .hero-visual {
@@ -938,5 +946,24 @@ select {
 }
 
 #main:focus-visible {
-  outline: none;
+  outline: 3px solid var(--pink);
+  outline-offset: 4px;
+}
+
+
+/* bag mobile stack — avoid horizontal overflow at ~390px */
+@media (max-width: 420px) {
+  .bag-line {
+    grid-template-columns: 56px 1fr;
+  }
+
+  .bag-remove {
+    grid-column: 2;
+    justify-self: start;
+  }
+
+  .bag-swatch {
+    width: 56px;
+    height: 56px;
+  }
 }
