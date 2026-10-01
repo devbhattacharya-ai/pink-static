@@ -247,6 +247,11 @@ select {
   text-transform: uppercase;
 }
 
+/* Desktop-only CTA inside header utils — do not let display:inline-flex unhide .nav-desktop */
+a.btn-shop-now.nav-desktop {
+  display: none;
+}
+
 .btn-shop-now:hover {
   background: var(--pink);
 }
@@ -288,6 +293,10 @@ select {
 @media (min-width: 960px) {
   .nav-desktop {
     display: flex;
+  }
+
+  a.btn-shop-now.nav-desktop {
+    display: inline-flex;
   }
 
   .nav-links {
@@ -965,5 +974,23 @@ select {
   .bag-swatch {
     width: 56px;
     height: 56px;
+  }
+}
+
+
+/* mobile header compact — keep utils within ~390px */
+@media (max-width: 420px) {
+  .nav-inner {
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
+    gap: 0.5rem;
+  }
+
+  .nav-utils {
+    gap: 0.1rem;
+  }
+
+  .logo {
+    font-size: 1.15rem;
   }
 }
